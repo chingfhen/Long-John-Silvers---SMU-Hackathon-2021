@@ -12,21 +12,17 @@ def add_datetime(document):
     return document
 
 
-# splits a document into smaller passages, with 1/3 overlap by default - because long documents cannot be processed properly
+# splits a document into smaller passages, no overlap - because long documents cannot be processed properly
 def split_document(document: dict, num_words = 100, split_respect_sentence_boundary = True):
 
-    is_doc = isinstance(document,Document)
-    if is_doc:
+    if isinstance(document,Document):
         document = document.to_dict()
     
     if document['meta']["name"] == "summary":                                   # summaries will not be split
         return [document]
     
-    pp = PreProcessor(split_by = "word",split_length  = num_words, split_overlap = int(num_words/3), split_respect_sentence_boundary = split_respect_sentence_boundary)
-    documents = pp.process(document)
-    
-    if is_doc:
-        documents = [Document(**doc) for doc in documents]
+    pp = PreProcessor(split_by = "word",split_length  = num_words, split_overlap = 0, split_respect_sentence_boundary = split_respect_sentence_boundary)
+    documents = [Document(**doc) for doc in pp.process(document)]
 
     return documents
 	

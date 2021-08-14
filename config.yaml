@@ -3,3 +3,4 @@ bi_encoder: paraphrase-mpnet-base-v2
 cross_encoder: cross-encoder/ms-marco-MiniLM-L-6-v2
 vector_similarity: cosine
 directory: C:\Users\tanch\Documents\Coding Competitions\SMU\SMU HACKATHON 2021\Long-John-Silvers---SMU-Hackathon-2021\data
+all_categories : ['hospital visits','in-person tuition & enrichment classes','live performances','mice events','hawker centres & coffee shops','marriage solemnizations','hairdressers & massage spas','hotels','food & beverage establishments','gyms & fitness studios','cinema','funerals','safe travel','spectator and participatory sports events','taxis & private hire cars','social gatherings','wedding receptions','workplace','worship & congregational services']
